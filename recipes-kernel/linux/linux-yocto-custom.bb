@@ -54,7 +54,7 @@
 inherit kernel
 require recipes-kernel/linux/linux-yocto.inc
 
-KBRANCH ?= "v6.4/standard/base"
+KBRANCH ?= "v6.12/standard/base"
 
 # The version of the customized kernel should be specified here, for example,
 SRC_URI = "git://${LAYER_PATH_wrlinux}/git/linux-yocto-dev.git;protocol=file;branch=${KBRANCH};name=machine"
@@ -62,15 +62,12 @@ SRC_URI = "git://${LAYER_PATH_wrlinux}/git/linux-yocto-dev.git;protocol=file;bra
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 # The version of the customized kernel should be specified here, for example,
-LINUX_VERSION ?= "6.4"
+LINUX_VERSION ?= "6.12"
 LINUX_VERSION_EXTENSION:append = "-custom"
 
 KERNEL_VERSION_SANITY_SKIP="1"
 
-# The use of ${AUTOREV} is not recommended and should be replaced by a specific
-# commit ID, ${AUTOREV} is only used here to ensure this reference recipe is
-# always buildable.
-SRCREV_machine ?= "${AUTOREV}"
+SRCREV_machine ?= "24aa244d67f02e2709e9e9f0365f2b41db0386c5"
 
 # Override this to use expected config options
 SRC_URI += "file://defconfig"

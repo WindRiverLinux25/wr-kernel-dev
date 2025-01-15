@@ -12,7 +12,7 @@ LINUX_VERSION = "6.6"
 LINUX_VERSION_EXTENSION:append = "-custom"
 
 KBRANCH ?= "v6.6/standard/base"
-SRCREV_machine = "${AUTOREV}"
+SRCREV_machine ?= "b51e4ee5e3c342d2035ff50e24e438810bb51b02"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # The location of the customized kernel should be specified here, for example,
