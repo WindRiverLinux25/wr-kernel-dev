@@ -8,11 +8,11 @@ PROVIDES = "${@bb.utils.contains("KERNEL_HEADER_DIR", "/usr", "linux-libc-header
 includedir = "${KERNEL_HEADER_DIR}/include"
 
 # The version of the customized kernel should be specified here, for example,
-LINUX_VERSION = "6.6"
+LINUX_VERSION = "6.12"
 LINUX_VERSION_EXTENSION:append = "-custom"
 
-KBRANCH ?= "v6.6/standard/base"
-SRCREV_machine ?= "b51e4ee5e3c342d2035ff50e24e438810bb51b02"
+KBRANCH ?= "v6.12/standard/base"
+SRCREV_machine ?= "b4aaef45f268729fa01eb93d24b77df569c995fa"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # The location of the customized kernel should be specified here, for example,
